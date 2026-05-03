@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500&family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #e0f7fa; /* health-related হালকা নীল */
+  color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+body.dark header {
+  background: #333;
+}
+body.dark .symptom-btn {
+  background: #444;
+  color: #eee;
+}
+
+/* Header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+  background: linear-gradient(to right, #2196F3, #21CBF3);
+  color: white;
+}
+header h1 {
+  font-family: 'Baloo Da 2', cursive;
+  animation: fadeInDown 1s ease;
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Logo Title (corner) */
+.logo-title {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Header Title */
+.header-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  letter-spacing: 1px;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, #2b7cff, #ff6f61);
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+}
+.navbar a {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.navbar a:hover {
+  background: rgba(255,255,255,0.2);
+  color: #fff200;
+}
+
+/* Side Menu */
+.side-menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2b7cff;
+  overflow-x: hidden;
+  transition: 0.4s;
+  padding-top: 60px;
+}
+.side-menu a {
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+}
+.side-menu.show {
+  width: 250px;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Search Section */
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  background: linear-gradient(to right, #2196F3, #FF4081);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin: 30px auto;
+  max-width: 600px;
+}
+#searchInput {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  max-width: 400px;
+}
+#searchButton {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #2196F3;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#searchButton:hover {
+  background-color: #e0f0ff;
+}
+
+/* Content */
+#content {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+.symptom-btn {
+  display: inline-block;
+  margin: 6px;
+  padding: 10px 16px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+.symptom-btn:hover {
+  background-color: #d0eaff;
+}
+
+/* Home Grid */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.home-card {
+  background: #f9f9f9;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: 200px;
+}
+.home-card:hover {
+  transform: translateY(-5px);
+}
+.home-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.home-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: #2b7cff;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+.home-btn:hover {
+  background: #1f5fd1;
+}
+
+/* Back Button */
+.back-btn {
+  margin: 20px 0 15px;
+  padding: 10px 16px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+.back-btn:hover {
+  background-color: #FF0000;
+}
+
+/* Food Section */
+.food-entry {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.food-grid {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.food-card {
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 10px;
+}
+.food-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+.food-card p {
+  margin-top: 8px;
+  font-weight: bold;
+}
+.food-img-large {
+  width: 250px;
+  border-radius: 12px;
+  margin: 10px 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Baloo Da 2', cursive;
+  padding: 20px;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #f1f1f1;
+  color: #ff3333;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+body.dark header {
+  background: #333;
+}
+body.dark .symptom-btn {
+  background: #444;
+  color: #eee;
+}
+body.dark .food-card {
+  background: #333;
+  color: #eee;
+}
+body.dark .food-card p {
+  color: #eee;
+}
+body.dark .food-card:hover {
+  background: #444;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* লোগো আর টেক্সটের মাঝে ফাঁকা */
+  font-family: 'Nunito', sans-serif;
+  font-size: 2em;
+  color: #fff;
+}
+
+.logo-icon {
+  height: 40px;   /* লোগোর সাইজ */
+  width: auto;
+  object-fit: contain;
+}
+
+
+
+
+/* ================== Common Problems ================== */
+.problem-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.problem-card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.problem-card:hover {
+  transform: translateY(-5px);
+  background: #e0f7fa;
+}
+
+.problem-card button {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 20px;
+  background: #28a745;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.problem-card button:hover {
+  background: #218838;
+}
+
+/* Search Section for Common Problems */
+#problemSearch {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  max-width: 400px;
+}
+
+.search-section button {
+  background-color: #ffffff;
+  color: #28a745;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-section button:hover {
+  background-color: #e0ffe0;
+}
+
+/* Dark Mode for Common Problems */
+body.dark .problem-card {
+  background: #333;
+  color: #eee;
+}
+
+body.dark .problem-card button {
+  background: #444;
+  color: #eee;
+}
+
+body.dark .problem-card button:hover {
+  background: #666;
+}
